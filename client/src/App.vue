@@ -1,14 +1,22 @@
 <template>
+<a-config-provider :locale="locale">
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <router-link to="/">Home</router-link>
+    <router-link to="/about">About</router-link>
     <router-view/>
   </div>
+</a-config-provider>
 </template>
 
-<style lang="scss">
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator';
+import ZH_CN from 'ant-design-vue/es/locale/zh_CN';
+
+export default class App extends Vue {
+  public locale: any = ZH_CN;
+}
+</script>
+<style lang="less">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
